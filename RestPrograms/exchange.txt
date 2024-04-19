@@ -1,0 +1,11 @@
+- The exchange method is used to extablish communication between two microservices.
+
+When to use?
+- When microservices/webservices wants to talk to each other then we use this method.
+
+How to use?
+ 1. exchange(param1, param2, param3, param4);
+     - param1:- url
+     - param2:- HttpMethod.POST, HttpMethod.GET, etc
+     - param3:- HttpEntity<Object>
+     - param4:- ResponseObject.class
