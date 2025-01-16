@@ -1,5 +1,24 @@
 Method Reference:
  - It is concise way to refer to a method/constuctor without writing entire method call.
+  Example:
+  Without Method reference:
+   - @FunctionalInterface interface AdderService{
+         int add(int a, int b);
+      }
+   - Class AdderApplication{
+       public static void main(String[] args){
+	// without Method references
+	  AdderService adderService = (Integer num1, Integer num2)-> num1+num2;
+	  adderService.add(10, 10);
+	// with method references
+	  AdderService adderService1 = Math::addExact;
+	  adderService.add(10, 10);
+       }
+     }
+  withmethod reference:
+   - 
+Note:
+ - This works only with Functional Interfaces.
 
 Types of Method References:
 1. Static Method Reference
