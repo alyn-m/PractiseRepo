@@ -1,0 +1,47 @@
+Method Reference:
+ - It is concise way to refer to a method/constuctor without writing entire method call.
+
+Types of Method References:
+1. Static Method Reference
+2. Instance Method Reference
+3. Constructor Reference
+
+Example-1:
+package com.alyn.java.core.method.reference;
+
+// custom lambda
+@FunctionalInterface
+interface AdderService{
+	int add(int a, int b);
+}
+
+public class MethodReferenceUsingCustomLambda {
+	// static method
+	public static int addition(int a, int b) {
+		return a+b;
+	}
+	
+	public static void main(String[] args) {
+		// static method reference
+		AdderService adderService = MethodReferenceUsingCustomLambda::addition;
+		
+		int result = adderService.add(10, 10);
+		System.out.println(result);
+	}
+}
+
+Example-2:
+package com.alyn.java.core.method.reference;
+
+import java.util.function.BiFunction;
+
+public class MethodReferenceUsingInbuild {
+	
+	public static void main(String[] args) {
+		BiFunction<Integer, Integer, Integer> adder = Math::addExact;
+		
+		int result = adder.apply(10, 10);
+		System.out.println(result);
+	}
+	
+}
